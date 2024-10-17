@@ -1,0 +1,15 @@
+# Configuraciones del servidor 
+RewriteEngine On
+Options All -Indexes
+
+# Suprimir la extension (.php)  en la navegacion URL AMIGABLES
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.*)$ $1.php [L]
+
+
+# Directivas de navegacion y acceso
+ErrorDocument 400  /Permisos/unauthorized.php
+ErrorDocument 401  /Permisos/unauthorized.php
+ErrorDocument 403  /Permisos/unauthorized.php
+ErrorDocument 404  /Permisos/404.php
