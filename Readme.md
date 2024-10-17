@@ -15,7 +15,7 @@ Esta es una cita importante, documentacion informacion sobre Software
 ```html
 <linl rel='styleshhet' href='ruta_absoluta/estilos.css'>
 ```
-En PHP utilizamos clases y manejar de excepciones
+En PHP utilizamos clases y manejar de excepciones 
 ```php
 class Miclases(){
     try{
