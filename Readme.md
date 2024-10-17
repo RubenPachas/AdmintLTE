@@ -1,5 +1,5 @@
 # ACERCA de esta App
-## Panrtilla: AdminTLTE + php Core
+## Plantilla: AdminTLTE + php Core
 ## Desarrollado por Ruben Pachas 
 
 Esta plantilla ha sido administrada utilizando  codigo backend PHP
