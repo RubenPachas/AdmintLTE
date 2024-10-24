@@ -32,7 +32,7 @@ require_once "./app/config/App.php";
 
         <form action="" method="post" id="formulario-login">
           <div class="input-group mb-3">
-            <input type="text" class="form-control" id="nomuser" placeholder="Nombre de usuario">
+            <input type="text" class="form-control" id="nomuser" placeholder="Nombre de usuario" autofocus required>
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-envelope"></span>
@@ -40,7 +40,7 @@ require_once "./app/config/App.php";
             </div>
           </div>
           <div class="input-group mb-3">
-            <input type="password" class="form-control" id="passuser" placeholder="Password">
+            <input type="password" class="form-control" id="passuser" placeholder="Password" required>
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-lock"></span>
@@ -81,35 +81,51 @@ require_once "./app/config/App.php";
   <script src="<?= SERVERURL ?>plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
   <!-- AdminLTE App -->
   <script src="<?= SERVERURL ?>dist/js/adminlte.min.js"></script>
+
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- SweetAlert Custom -->
+  <script src="<?php SERVERURL ?>dist/js/swalcustom.js"></script>
+
+
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener("DOMContentLoaded", () => {
 
+      const formulario = document.querySelector("#formulario-login");
+      const inputNomUser = document.querySelector("#nomuser");
+      const inputPassUser = document.querySelector("#passuser");
 
-      document.getElementById('formulario-login').addEventListener('submit', function(e) {
-        e.preventDefault();
-        const nomuser = document.getElementById('nomuser').value;
-        const passuser = document.getElementById('passuser').value;
-        const data = new FormData();
-        data.append('operation', 'login');
-        data.append('nomuser', nomuser);
-        data.append('passuser', passuser);
-        fetch('./app/controllers/Usuario.controller.php', {
-            method: 'POST',
-            body: data
-          })
-          .then(response => response.json())
-          .then(data => {
-            if (data.esCorrecto) {
-              alert(data.mensaje);
-              window.location.href = './views/index.php';
-            } else {
-              alert(data.mensaje);
-            }
-          })
-          .catch(error => console.error(error));
+      formulario.addEventListener("submit", async (event) => {
+        event.preventDefault(); //Detener 
+
+        const parametros = new FormData();
+
+        parametros.append("operation", "login");
+        parametros.append("nomuser", inputNomUser.value);
+        parametros.append("passuser", inputPassUser.value);
+
+        const response = await fetch('./app/controllers/Usuario.controller.php', {
+
+          method: 'POST',
+
+          body: parametros
+
+        });
+
+        const data = await response.json();
+
+        if (!data.esCorrecto) {
+
+          showToast(data.mensaje);
+        } else {
+          showToast(data.mensaje, 'SUCCESS', 800, './views');
+        }
       });
+
     });
   </script>
+
+
 </body>
 
 </html>
