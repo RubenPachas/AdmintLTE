@@ -10,7 +10,7 @@ include_once '../includes/header.php';
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <?php echo renderContentHeader("Lista de Horario", "Inicio", SERVERURL . "views"); ?>
+    <?php echo renderContentHeader("Lista de Horarios", "Inicio", SERVERURL . "views"); ?>
     <!-- /.content-header -->
 
     <!-- Main content -->
@@ -31,16 +31,19 @@ include_once '../includes/header.php';
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>horario</th>
-                                            <th>Turno</th>
-                                            
+                                            <th>Colaborador</th>
+                                            <th>Dia</th>
+                                            <th>H. Entrada</th>
+                                            <th>H. Salida</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
                                             <td>1</td>
                                             <td>Ruben</td>
-                                            <td>Mañana</td>
+                                            <td>24/-10-2024</td>
+                                            <td>07:40</td>
+                                            <td>13:45</td>
                                         </tr>
                                     </tbody>
                                 </table>
