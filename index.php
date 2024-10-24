@@ -83,6 +83,8 @@ require_once "./app/config/App.php";
   <script src="<?= SERVERURL ?>dist/js/adminlte.min.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
+
+
       document.getElementById('formulario-login').addEventListener('submit', function(e) {
         e.preventDefault();
         const nomuser = document.getElementById('nomuser').value;
