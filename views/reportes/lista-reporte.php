@@ -26,17 +26,20 @@ include_once '../includes/header.php';
                             </div>
                         </div>
                         <div class="card-body">
-                            <div class="table-responsive">
-                                
-                            </div>
+                            <?php
+                            $url = $_SERVER["REQUEST_URI"];
+                            $arreglo = explode("/", $url);// se debe comparar con la ruta de la vista
+                            var_dump($arreglo);
+                            ?>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- /.row -->
-        </div><!-- /.container-fluid -->
-    </div>
-    <!-- /.content -->
+        </div>
+        <!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+<!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
 

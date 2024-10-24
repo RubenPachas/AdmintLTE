@@ -1,6 +1,16 @@
 <?php
-/* Condfiguracion de la aplicacion */
+session_start();
+
+/* Configuracion de la aplicacion */
 require_once "./app/config/App.php";
+//Cuando un usuario posea una sesion activa, NO DEBE RENDERIZAR EL LOGIN
+if (isset($_SESSION['login']) && $_SESSION['login']['status'] === true) {
+  header("Location: " . SERVERURL . "views/");
+  exit;
+}
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="es">

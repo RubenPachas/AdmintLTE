@@ -16,7 +16,7 @@ function renderContentHeader($title, $home, $path)
             <div class='container-fluid'>
                 <div class='row mb-2'>
                     <div class='col-sm-6'>
-                        <h1 class='m-0'{$title}>Registro de colaborador</h1>
+                        <h1 class='m-0'{$title}></h1>
                     </div><!-- /.col -->
                     <div class='col-sm-6'>
                         <ol class='breadcrumb float-sm-right'>
@@ -29,3 +29,20 @@ function renderContentHeader($title, $home, $path)
         </div>
     ";
 }
+
+//Que opciones e interfaces podra utilizar el usuario segun su perfil
+$permisos = [
+    "ADM" => [
+        ["vista" => "horario", "ruta" => "lista-horario"],
+        ["vista" => "colaboradores", "ruta" => "lista-colaborador"],
+        ["vista" => "permisos", "ruta" => "lista-permiso"],
+        ["vista" => "reportes", "ruta" => "lista-reporte"]
+    ],
+    "SPV" => [
+        ["vista" => "permisos", "ruta" => "lista-permiso"],
+        ["vista" => "reportes", "ruta" => "lista-reporte"]
+    ],
+    "INV" => [
+        ["vista" => "horarios", "ruta" => "lista-horario"]
+    ]
+];
