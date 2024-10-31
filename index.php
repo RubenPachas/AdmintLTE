@@ -1,5 +1,5 @@
 <?php
-session_start();
+session_start(); //Crea o hereda la session
 
 /* Configuracion de la aplicacion */
 require_once "./app/config/App.php";
@@ -73,9 +73,10 @@ if (isset($_SESSION['login']) && $_SESSION['login']['status'] === true) {
           <button class="btn btn-sm btn-primary btn-block" type="submit">Iniciar Sesion</button>
           <button class="btn btn-sm btn-danger btn-block" type="button">Recuperar Contraseña</button>
         </div>
+
         <!-- /.social-auth-links -->
 
-        <p class="mb-0">
+        <p class="mb-0 text">
           <a href="mailto:benjaminpac22@gmail.com">Soporte Tecnico</a>
         </p>
       </div>
@@ -128,7 +129,7 @@ if (isset($_SESSION['login']) && $_SESSION['login']['status'] === true) {
 
           showToast(data.mensaje);
         } else {
-          showToast(data.mensaje, 'SUCCESS', 800, './views');
+          showToast(data.mensaje, 'SUCCESS', 800, './views/home/welcome');
         }
       });
 

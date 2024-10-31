@@ -1,8 +1,6 @@
 <?php
 require_once '../../app/config/App.php';
-?>
 
-<?php
 //Incluye la cabezera del DASBOARD y 2 secciones NAV + ASIDE
 include_once '../includes/header.php';
 ?>
@@ -10,7 +8,7 @@ include_once '../includes/header.php';
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <?php echo renderContentHeader("registro de Horario", "Lista horario", SERVERURL . "views/horarios/lista-horario"); ?>
+    <?php echo renderContentHeader("registra Horario", "Lista horarios", "./lista-horario"); ?>
     <!-- /.content-header -->
 
     <!-- Main content -->
@@ -22,22 +20,15 @@ include_once '../includes/header.php';
                         <div class="card card-outline card-primary">
                             <div class="card-header">
                                 <div class="row ">
-                                    <div class="col-md-6">Complete los datos</div>
+                                    <div class="col-md-6">Horarios</div>
                                     <div class="col-md-6 text-right">
-                                        <a href="./lista-colaborador" class="btn btn-sm btn-primary">Mostrar lista</a>
+                                        <a href="./lista-horario" class="btn btn-sm btn-primary">Mostrar lista</a>
                                     </div>
                                 </div>
                             </div>
                             <div class="car-body">
                                 <div class="row">
-                                    <div class="col-md-4 form-group">
-                                        <label for="nombres">Nombres</label>
-                                        <input type="text" class="form-control" id="nombres" required>
-                                    </div>
-                                    <div class="col-md-4 form-group">
-                                        <label for="turno">Turno</label>
-                                        <input type="text" class="form-control" id="turno" required>
-                                    </div>
+                                   
                                 </div>
                             </div>
                             <div class="card-footer text-right">
